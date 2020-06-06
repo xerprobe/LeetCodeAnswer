@@ -13,7 +13,7 @@ def createFile(filePath):
   if not os.path.exists(filePath):
     open(filePath,"w+").close()
 
-for i in range(3,100):
+for i in range(910,911):
   path = os.getcwd() + '\\' + str(i)
   mkdir(path)
   createFile(path)

@@ -1,29 +1,28 @@
 # The guess API is already defined for you.
 # @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
 
-
 def guess(num: int) -> int:
-    pick = 6
+    pick = 50
     if num > pick:
-        return 1
-    elif num < pick:
         return -1
+    elif num < pick:
+        return 1
     else:
         return 0
 
+
 class Solution:
     def guessNumber(self, n: int) -> int:
+        g = n
         res = guess(n)
         while res:
             if res == 1:
                 n = (g + n) // 2
-                res = guess(n)
             elif res == -1:
                 g = n
                 n = n // 2
-                res = guess(n)
+            res = guess(n)
         return n
-
 
 # 我们正在玩一个猜数字游戏。 游戏规则如下：
 # 我从 1 到 n 选择一个数字。 你需要猜我选择了哪个数字。
